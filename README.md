@@ -1,6 +1,6 @@
 # Templates for everybody
-Add these templates in your directory:<br />
-`C:\Users\[UserName]\AppData\Roaming\texstudio\templates\user`
+Avaiable TeXstudio templates:<br />
+* DIN A4 vertical format
 
 ## How To Use
 Download the templates you are interested in.<br />
