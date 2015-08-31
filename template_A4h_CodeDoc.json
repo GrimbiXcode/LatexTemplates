@@ -1,0 +1,8 @@
+{
+"Name"        : "A4h_CodeDoc",
+"Author"      : "David Grimbichler",
+"Date"        : "2015-08-31",
+"Version"     : "1.0",
+"Description" : "DIN A4 vertical format. left=35mm,right=25mm,top=15mm,bottom=10mm Template to do great code documentation.",
+"License"     : "GNU Free Documentation License"
+}

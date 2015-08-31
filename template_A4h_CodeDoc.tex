@@ -1,0 +1,186 @@
+% das Papierformat zuerst
+\documentclass[a4paper, 11pt]{article}
+
+% ==========================================================================================
+% Packages
+% ==========================================================================================
+
+% Für den gebarauch von Umlaute: Zeichenkodierung einstellen in
+% Settings unten Links: windows-1252 statt UTF-8
+% Einstellung für Umlaute
+\usepackage[latin1]{inputenc} 
+
+% Einstellungen des verwendeten Platzes auf dem Blatt
+\usepackage[left=35mm,right=25mm,top=15mm,bottom=10mm,includeheadfoot]{geometry}
+
+% ein (=1) und ausschalten (=0) von Bildern
+\usepackage{ifthen}
+\newboolean{enGraphics} %Deklaration
+\setboolean{enGraphics}{true}%Zuweisung
+\usepackage{graphicx}
+
+% Damit das Einrücken verhindert wird
+\parindent=0pt
+
+% ==========================================================================================
+% Snippet for Code Highlighting und anderes Zeugs
+% ==========================================================================================
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{RGB}{51, 153, 51}
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{redstr}{RGB}{153, 0, 0}
+\definecolor{black}{RGB}{0, 0, 0}
+
+\lstdefinestyle{sharpc}{
+	frame=single,
+	language=[Sharp]C,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{redstr},
+	breaklines=true,
+	breakatwhitespace=true,
+	aboveskip=5pt,
+	belowskip=5pt,
+	tabsize=3,
+	rulecolor=\color{black}
+}
+
+\lstdefinestyle{synless}{
+	language={},                % {} für normalen Klartext
+	backgroundcolor=\color{white},
+	linewidth=\linewidth,       % Zeilenbreite
+	columns=flexible,
+	basicstyle={\small\ttfamily\color{gray}},
+	aboveskip=5pt,
+	belowskip=5pt,
+	breaklines=true,             % Zeileumbruch
+	breakatwhitespace=true  %Umbruch an Leerzeichen
+}
+
+\lstdefinestyle{important}{
+	language={},                % {} für normalen Klartext
+	frame=single,
+	backgroundcolor=\color{white},
+	linewidth=\linewidth,       % Zeilenbreite
+	columns=flexible,
+	basicstyle=\bfseries,
+	aboveskip=5pt,
+	belowskip=5pt,
+	breaklines=true,             % Zeileumbruch
+	breakatwhitespace=true  %Umbruch an Leerzeichen
+}
+
+% ==========================================================================================
+% Titelblatt
+% ==========================================================================================
+% hier beginnt das Dokument
+\begin{document}
+	% hier beginnt die Titelseite
+	\begin{titlepage}
+
+		\begin{center}
+			% Oberer Teil der Titelseite:
+			
+			% place here your logo or title image
+			%\includegraphics[width=0.15\textwidth]{./logo}\\[1cm]    
+			\textsc{\LARGE University of GrimbiXcode}\\[1.5cm]
+			\textsc{\Large Final year project}\\[0.5cm]
+
+			% Title
+			\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+			\HRule \\[0.4cm]
+			{ \huge \bfseries The reason of our Universe}\\[0.4cm]
+			\HRule \\[1.5cm]
+			% Author and supervisor
+			\begin{minipage}{0.4\textwidth}
+				\begin{flushleft} \large
+					\emph{Author:}\\
+					David \textsc{Grimbichler}
+				\end{flushleft}
+			\end{minipage}
+			\hfill
+			\begin{minipage}{0.4\textwidth}
+				\begin{flushright} \large
+					\emph{Supervisor:} \\
+					Dr.~Dojo \textsc{Code}
+				\end{flushright}
+			\end{minipage}
+			\vfill
+			% Unterer Teil der Seite
+			{\large \today}
+
+		\end{center}
+	\end{titlepage}
+
+% ==========================================================================================
+% Inhaltsverzeichnis / table of content
+% ==========================================================================================
+% Benenne das Inahltsverzeichniss neu
+\renewcommand{\contentsname}{Inhalt}
+% Inhaltsverzeichnis anzeigen
+\tableofcontents
+
+% Kapitel soll auf naechster Seite beginnen
+% ******************************************************************************************
+% New Page
+\newpage
+% ******************************************************************************************
+
+% ==========================================================================================
+% Eigentlicher Dokumentinhalt / Document content
+% ==========================================================================================
+% Kapitelueberschrift
+\section{Einleitung}
+
+% Ueberschrift eines Abschnittes
+\subsection{Motivation}
+
+Dies ist ein Satz.
+
+% Ueberschrift eines Abschnittes
+\subsection{Abgrenzung}
+
+Dies ist ein Satz.
+
+Neuer Code mit gruener Einfaerbung:
+
+\begin{lstlisting}[style=sharpc]
+// MainWindow.xaml.cs
+_tboErgebnisBottom.Foreground = Brushes.Green;
+_tboErgebnisTop.Foreground = Brushes.Green;
+_tboErgebnisTop.Enabled = true;
+_tboErgebnisTop.Text = "Erfolgreich";
+\end{lstlisting}
+
+% Ueberschrift eines Abschnittes
+\subsection{Allgemeine Ablage der Testsoftware} \label{sssec:num1}
+Die Testsoftware ist bis zur Version 0.9 im Verzeichnis:
+
+\begin{lstlisting}[style=synless]
+X:\Produkte\Entwicklung\Software\Testsoftware\
+\end{lstlisting}
+
+
+% Kapitel soll auf naechster Seite beginnen
+% ******************************************************************************************
+% New Page
+\newpage
+% ******************************************************************************************
+% Kapitelueberschrift
+\section{Theoretische Betrachtungen}
+
+Dies ist ein Satz.
+
+% ==========================================================================================
+% Ende des Dokuments/ End of document
+% ==========================================================================================
+\end{document}
